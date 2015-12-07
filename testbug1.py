@@ -3,7 +3,7 @@ import json
 import time
 import datetime
 
-codes = {'SZ000002': '02', 'SZ000004': 'shenmegui', 'SZ000008': '111'}
+codes = {'SZ000002': '02', 'SH000001': 'big bro'}
 
 while 1:
     time.sleep(5)
@@ -22,5 +22,5 @@ while 1:
         data = urllib.request.urlopen(req).read().decode('UTF-8')
         js_data = json.loads(data)
         print(js_data[code]['current'], '\t', end='')
-        print(js_data[code]['net_assets'], '\t', end='')
-        print(code, '\t', name)
+        print(js_data[code]['percentage'], '\t', end='')
+        print(name)
