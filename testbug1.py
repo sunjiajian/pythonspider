@@ -2,9 +2,12 @@ import urllib.request
 import json
 import time
 import datetime
-import tushare
+import tushare as ts
 
 codes = {'SZ000002': '02', 'SZ000996': 'zq', 'SH000001': 'big bro'}
+
+lhb = ts.top_list('2015-12-08')
+print(lhb)
 
 while 1:
     time.sleep(5)
