@@ -7,6 +7,9 @@ import pandas
 
 days = {'day0': '2015-12-09', 'day1': '2015-12-10'}
 
+dfall = ts.get_today_all()
+dfall.to_excel('all.xlsx')
+
 lhb = ts.top_list(days['day0'])
 # lhb.to_excel('test1.xlsx')
 print(len(lhb.index), len(lhb.columns))
