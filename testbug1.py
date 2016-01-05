@@ -25,6 +25,25 @@ def code2str(cd):
         scd = str(cd)
         return scd
 
+n_data = pandas.DataFrame(columns=('code', 'name', 'bvps', 'now'))
+
+bs = pandas.read_excel('bvps.xlsx')
+sub = 0
+for code2 in bs.code:
+    try:
+        cd = code2str(code2)
+        df1 = ts.get_realtime_quotes(cd)
+        price = float(df1['price'][0])
+        bvps = float(bs.iloc[sub]['bvps'])
+        if price < bvps:
+            n_data.loc[sub] = [cd, bs.iloc[sub]['name'], bvps, price]
+    except:
+        pass
+    sub += 1
+
+n_data.to_excel('priceANDbvps.xlsx')
+
+
 days = {'day0': '2015-12-28', 'day1': '2015-12-29'}
 
 # dfall = ts.get_today_all()
