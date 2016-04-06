@@ -1,2 +1,2 @@
-python testbug1.py
+python kanpan.py
 pause
