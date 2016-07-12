@@ -5,12 +5,12 @@ import datetime
 import tushare
 import pandas
 
-codes = {'01_SH': 'sh', '02_SZ': 'sz', '03_CYB': 'cyb', '10_HLWB': '150195', '11_WJRB': '150332', '16_XNCB': '150212'}
+codes = {'01_SH': 'sh', '02_SZ': 'sz', '03_CYB': 'cyb', '10_HLWB': '150195', '11_WJRB': '150332', '12_GQGB': '150210'}
 
 while 1:
     time.sleep(3)
     sub = 0
-    codesdf = pandas.DataFrame(columns=('name', 'price', 'percent', 'amount'))
+    codesdf = pandas.DataFrame(columns=('name', 'code', 'price', 'percent', 'amount'))
     for name, code in codes.items():
         try:
             df = tushare.get_realtime_quotes(code)
@@ -18,7 +18,7 @@ while 1:
             amount = float(df['amount'][0]) / 100000000
             # if float(df['amount'][0]) < 100000000:
             #     amount = float(df['amount'][0]) / 10000
-            codesdf.loc[sub] = [name, df['price'][0], percent, amount]
+            codesdf.loc[sub] = [name, code, df['price'][0], percent, amount]
             sub += 1
         except:
             pass
