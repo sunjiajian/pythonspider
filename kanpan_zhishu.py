@@ -5,7 +5,7 @@ import datetime
 import tushare
 import pandas
 
-codes = {'01_SH': 'sh', '02_SZ': 'sz', '03_CYB': 'cyb', '10_HLWB': '150195', '11_WJRB': '150332', '12_GQGB': '150210', '17_XNCB': '150212', '29_HSDZ': '600570', '2A_JZGF': '600446'}
+codes = {'01_SH': 'sh', '02_SZ': 'sz', '03_CYB': 'cyb', '10_HLWB': '150195', '11_WJRB': '150332', '12_GQGB': '150210', '29_HSDZ': '600570', '2A_JZGF': '600446', '2E_DFMZ': '600637', '2F_ZGZG': '601989', '2G_ZGLT': '600050', '2H_ZHFJ': '000768'}
 
 while 1:
     time.sleep(3)
