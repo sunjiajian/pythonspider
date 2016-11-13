@@ -19,7 +19,7 @@ def code2str(cd):
         scd = '00%d' % cd
         return scd
     elif cd < 100000:
-        scd = '%d' % cd
+        scd = '0%d' % cd
         return scd
     else:
         scd = str(cd)
